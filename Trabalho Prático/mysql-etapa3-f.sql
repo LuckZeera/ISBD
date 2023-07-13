@@ -43,7 +43,7 @@ LEFT JOIN Piloto ON Funcionario.idFuncionario = Piloto.idPiloto;
 SELECT nome
 FROM Funcionario
 WHERE idFuncionario IN (
-  SELECT Engenheiro_idFuncionario
+  SELECT idEquipe
   FROM Funcionario
   WHERE tipo_func = 'E'
 )
@@ -66,7 +66,7 @@ WHERE idEquipe IN (SELECT idEquipe
 
 -- 9- Consulta com cláusulas SELECT, FROM e LIKE
 SELECT nome 
-FROM Fã 
+FROM Fa 
 WHERE cidade LIKE '%ão%';
 -- Esta consulta retorna os nomes dos fãs cuja cidade contém a sequência de caracteres "ão" em qualquer posição.
 
@@ -93,6 +93,8 @@ FROM Equipe
 GROUP BY idEquipe 
 HAVING AVG(titulos) > (SELECT AVG(titulos) FROM Equipe);
 -- Esta consulta retorna o id da equipe e a média de títulos de cada equipe, apenas para as equipes cuja média de títulos seja maior do que a média de títulos geral de todas as equipes.
+
+
 
 
 
